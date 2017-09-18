@@ -57,7 +57,7 @@ function getMovieData(input) {
           movieData = response.results;
           searchTotal = response.total_results;
           for(var i = 0; i < movieData.length; i++) {
-              if(movieData.poster_path === null) { // working to set no image if poster_path null
+              if(movieData[i].poster_path === null) { // working to set no image if poster_path null
                 var moviePosterImg = noImgUrl;
                 console.log(noImgUrl);
               } else {
