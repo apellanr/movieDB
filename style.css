@@ -1,15 +1,9 @@
 /* --------------------------*/
 /* GENERAL SETUP */
 /*---------------------------*/
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Lato', 'Arial', sans-serif;
-    text-rendering: optimizeLegibility;
-}
-
 html {
-    font-family: 'Lato', 'Arial', sans-serif;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    text-rendering: optimizeLegibility;
 }
 
 /* --------------------------*/
@@ -25,13 +19,13 @@ h1 {
 /* HEADER */
 /*---------------------------*/
 .jumbotron {
-    color: #fff;
-    background-color: #ADADAD;
+    color: #FFFFFF;
+    background-color: #000000;
 }
 
 .input-group {
     margin: 0 auto;
-    width: 60%;
+    width: 50%;
 }
 
 /* --------------------------*/
