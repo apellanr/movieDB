@@ -22,7 +22,6 @@ NOTES:
 */
 
 $(document).ready(function(){
-    console.log('app loaded');
     handleEvents();
 });
 
@@ -40,7 +39,6 @@ var movieData = null,
 ----------------------------*/    
 function handleEvents() {
     $(".search").on('click', function(){
-        console.log('submit clicked');
         var input = $(".input").val();
         getMovieData(input);
     });
@@ -49,17 +47,15 @@ function handleEvents() {
 /* MOVIEDB CALL ----------------
 ----------------------------*/
 function getMovieData(input) {
-    console.log('calling moviedb');
       $.ajax({
         "async": true,
         "crossDomain": true,
         "url": url + input + key,
         "method": "get",
       })
-      .done(function(response) {
+      .done(function(response) { // .success and .error were deprecated methods
           movieData = response.results;
           searchTotal = response.total_results;
-          console.log(searchTotal);
           for(var i = 0; i < movieData.length; i++) {
               if(movieData.poster_path === null) { // working to set no image if poster_path null
                 var moviePosterImg = noImgUrl;
@@ -109,6 +105,6 @@ function displayData(movieInfo) {
 
 /* RESET FUNCTION --------------
 ----------------------------*/
-function newSearch() {
+function newSearch() { // function to trigger new movie search
     
 }
