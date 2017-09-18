@@ -1,0 +1,39 @@
+/* --------------------------*/
+/* GENERAL SETUP */
+/*---------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', 'Arial', sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+html {
+    font-family: 'Lato', 'Arial', sans-serif;
+}
+
+/* --------------------------*/
+/* HEADINGS */
+/*---------------------------*/
+h1 {
+    letter-spacing: 3px;;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+/* --------------------------*/
+/* HEADER */
+/*---------------------------*/
+.jumbotron {
+    color: #fff;
+    background-color: #ADADAD;
+}
+
+.input-group {
+    margin: 0 auto;
+    width: 60%;
+}
+
+/* --------------------------*/
+/* MOVIE SECTION */
+/*---------------------------*/
