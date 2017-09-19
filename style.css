@@ -31,12 +31,6 @@ h2 {
 /* --------------------------*/
 /* CARD ELEMENTS */
 /*---------------------------*/
-
-
-.card {
-    font-size: 1em;
-}
-
 .card-img-top {
     display: block;
     width: 100%;
