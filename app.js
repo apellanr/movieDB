@@ -52,7 +52,7 @@ function getMovieData(input) {
         "crossDomain": true,
         "url": url + input + key,
         "method": "get",
-      })
+      }) // alternative construct to the success callback
       .done(function(response) { // .success and .error were deprecated methods
           movieData = response.results;
           searchTotal = response.total_results;
@@ -68,6 +68,9 @@ function getMovieData(input) {
               createCardElements(moviePosterImg, filmTitle);
           }
           displayTotalResults(searchTotal);
+    }) // alternative to error callback if ajax call fails
+    .fail(function(response){
+        console.log('error has occured!');
     });
 }
 
