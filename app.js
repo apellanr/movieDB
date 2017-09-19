@@ -56,18 +56,18 @@ function getMovieData(input) {
       .done(function(response) { // .success and .error were deprecated methods
           movieData = response.results;
           searchTotal = response.total_results;
-          for(var i = 0; i < movieData.length; i++) {
-              if(movieData[i].poster_path === null) { // working to set no image if poster_path null
-                var moviePosterImg = noImgUrl;
-                console.log(noImgUrl);
+          for(var i = 0; i < movieData.length; i++) { 
+              // error handling for no found img
+              if(movieData[i].poster_path === null) { // cond. to check if img cannot be found
+                var moviePosterImg = noImgUrl; 
               } else {
                 var posterPath = movieData[i].poster_path;
-                var filmTitle = movieData[i].title;
+                var filmTitle = movieData[i].title; // noticed that film titles have misnomers comparing original_title prop.
                 moviePosterImg = imgBasePath + posterPath;
               }
               createCardElements(moviePosterImg, filmTitle);
           }
-          displayTotalResults(searchTotal);          
+          displayTotalResults(searchTotal);
     });
 }
 
@@ -85,9 +85,9 @@ function createCardElements(img, title) {
     $cardBlock.append($cardText);
     $cardDiv.append($img, $cardBlock);
 
-    // Append to card-row div in html page
+    // Append cardDiv to bootstrap grid div
     $div.append($cardDiv);
-    displayData($div);
+    displayMovieData($div);
 }
 
 /* DISPLAY TOTAL --------------
@@ -99,7 +99,7 @@ function displayTotalResults(total) {
 
 /* DISPLAY TO DOM --------------
 ----------------------------*/
-function displayData(movieInfo) {
+function displayMovieData(movieInfo) {
     $(".movie-cards").append(movieInfo);
 }
 
